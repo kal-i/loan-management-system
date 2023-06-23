@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{402DCF99-7F97-4FF8-B1ED-13F2B2E55B19}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>LoanManagementSystem</RootNamespace>
+    <AssemblyName>LoanManagementSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.4\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="OxyPlot, Version=2.1.2.0, Culture=neutral, PublicKeyToken=638079a8f0bd61e9, processorArchitecture=MSIL">
+      <HintPath>..\packages\OxyPlot.Core.2.1.2\lib\net45\OxyPlot.dll</HintPath>
+    </Reference>
+    <Reference Include="OxyPlot.WindowsForms, Version=2.1.2.0, Culture=neutral, PublicKeyToken=245eacd6b5d2d338, processorArchitecture=MSIL">
+      <HintPath>..\packages\OxyPlot.WindowsForms.2.1.2\lib\net45\OxyPlot.WindowsForms.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Factories\AutoLoanApplicationFactory.cs" />
+    <Compile Include="Factories\LoanApplicationFactory.cs" />
+    <Compile Include="Factories\LoanFactory.cs" />
+    <Compile Include="Factories\MortgageLoanApplicationFactory.cs" />
+    <Compile Include="Factories\PersonalLoanApplicationFactory.cs" />
+    <Compile Include="Factories\SmallBusinessLoanApplicationFactory.cs" />
+    <Compile Include="Factories\StudentLoanApplicationFactory.cs" />
+    <Compile Include="Models\AutoLoanApplication.cs" />
+    <Compile Include="Models\Collateral.cs" />
+    <Compile Include="Models\Loan.cs" />
+    <Compile Include="Models\LoanAmortization.cs" />
+    <Compile Include="Models\MortgageLoanApplication.cs" />
+    <Compile Include="Models\Payment.cs" />
+    <Compile Include="Models\PersonalLoanApplication.cs" />
+    <Compile Include="Models\SmallBusinessLoanApplication.cs" />
+    <Compile Include="Models\StudentLoanApplication.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="ViewController\frmPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewController\frmPayment.Designer.cs">
+      <DependentUpon>frmPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewController\PaymentUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewController\PaymentUserControl.Designer.cs">
+      <DependentUpon>PaymentUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repositories\ClientRepository.cs" />
+    <Compile Include="Repositories\LoanApplicationRepository.cs" />
+    <Compile Include="Repositories\LoanRepository.cs" />
+    <Compile Include="Repositories\LoanTypeRepository.cs" />
+    <Compile Include="Repositories\PaymentRepository.cs" />
+    <Compile Include="ViewController\frmGuarantorApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewController\frmGuarantorApplication.Designer.cs">
+      <DependentUpon>frmGuarantorApplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewController\frmLoanOfficerApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewController\frmLoanOfficerApplication.Designer.cs">
+      <DependentUpon>frmLoanOfficerApplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repositories\GuarantorRepository.cs" />
+    <Compile Include="Repositories\LoanOfficerRepository.cs" />
+    <Compile Include="Models\Client.cs" />
+    <Compile Include="Models\DBConnection.cs" />
+    <Compile Include="ViewController\frmClientApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewController\frmClientApplication.Designer.cs">
+      <DependentUpon>frmClientApplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewController\frmDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewController\frmDashboard.Designer.cs">
+      <DependentUpon>frmDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewController\frmLoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewController\frmLoan.Designer.cs">
+      <DependentUpon>frmLoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewController\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewController\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Guarantor.cs" />
+    <Compile Include="Models\LoanApplication.cs" />
+    <Compile Include="Models\LoanOfficer.cs" />
+    <Compile Include="Models\LoanType.cs" />
+    <Compile Include="Models\Person.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Setting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Setting.Designer.cs">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewController\ClientGuarantorLenderUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewController\ClientGuarantorLenderUserControl.Designer.cs">
+      <DependentUpon>ClientGuarantorLenderUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewController\HomeUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewController\HomeUserControl.Designer.cs">
+      <DependentUpon>HomeUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewController\LoanProcessUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewController\LoanProcessUserControl.Designer.cs">
+      <DependentUpon>LoanProcessUserControl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ViewController\frmClientApplication.resx">
+      <DependentUpon>frmClientApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewController\frmGuarantorApplication.resx">
+      <DependentUpon>frmGuarantorApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewController\frmLoanOfficerApplication.resx">
+      <DependentUpon>frmLoanOfficerApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewController\frmDashboard.resx">
+      <DependentUpon>frmDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewController\frmLoan.resx">
+      <DependentUpon>frmLoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewController\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Setting.resx">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewController\ClientGuarantorLenderUserControl.resx">
+      <DependentUpon>ClientGuarantorLenderUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewController\frmPayment.resx">
+      <DependentUpon>frmPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewController\HomeUserControl.resx">
+      <DependentUpon>HomeUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewController\LoanProcessUserControl.resx">
+      <DependentUpon>LoanProcessUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewController\PaymentUserControl.resx">
+      <DependentUpon>PaymentUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Client.datasource" />
+    <None Include="Properties\DataSources\Guarantor.datasource" />
+    <None Include="Properties\DataSources\LoanManagementSystem.Model.Loan.datasource" />
+    <None Include="Properties\DataSources\LoanManagementSystem.Model.LoanApplication.datasource" />
+    <None Include="Properties\DataSources\LoanManagementSystem.Models.LoanAmortization.datasource" />
+    <None Include="Properties\DataSources\LoanManagementSystem.Models.Payment.datasource" />
+    <None Include="Properties\DataSources\LoanOfficer.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
