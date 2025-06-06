@@ -19,3 +19,5 @@ The loan management system contains the following features:
 7. Payment Process:
        Active Loans tab - A tab to view and pay loans.
        Settled Loans tab - A tab to view all settled loans.
+
+![Loan Management DB Diagram](db-diagram.png)
