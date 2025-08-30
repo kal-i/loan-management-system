@@ -20,4 +20,5 @@ The loan management system contains the following features:
        Active Loans tab - A tab to view and pay loans.
        Settled Loans tab - A tab to view all settled loans.
 
+![Loan Management UI](lms.png)
 ![Loan Management DB Diagram](db-diagram.png)
